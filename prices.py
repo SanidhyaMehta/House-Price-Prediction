@@ -15,6 +15,7 @@ dfs = [pd.read_csv(f, parse_dates=True, index_col=0) for f in fed_files]
 
 fed_data = pd.concat(dfs, axis=1)
 # print(f"FED DATA : \n{fed_data}")
+fed_data.columns = ["interest", "vacancy", "cpi"]
 
 fed_data = fed_data.ffill().dropna()
 # print(f"FED DATA WITHOUT NAN :\n {fed_data}")
