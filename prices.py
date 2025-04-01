@@ -32,6 +32,7 @@ dfs = [pd.DataFrame(df.iloc[0,5:]) for df in dfs]
 for df in dfs:
     df.index = pd.to_datetime(df.index)
     df["month"] = df.index.to_period("M")
+    
 
 
 # print(dfs[0])
